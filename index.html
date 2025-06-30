@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eternal - Discord Server</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body.dark {
+      background-color: #1a202c;
+      color: white;
+    }
+    header {
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: inherit;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+    button.toggle-theme {
+      padding: 0.5rem 1rem;
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 0.375rem;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    button.toggle-theme:hover {
+      background-color: #2563eb;
+    }
+    main {
+      flex-grow: 1;
+      padding: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    a.join-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #7c3aed;
+      color: white;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    a.join-link:hover {
+      background-color: #6b21a8;
+    }
+    section.rules {
+      text-align: left;
+      margin-top: 2rem;
+    }
+    section.rules h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    section.rules ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      line-height: 1.5;
+    }
+    iframe.discord-widget {
+      margin-top: 2rem;
+      border: none;
+      border-radius: 0.375rem;
+      width: 350px;
+      height: 500px;
+      max-width: 100%;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      border-top: 1px solid #ccc;
+      background-color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eternal</h1>
+    <button class="toggle-theme" aria-label="Toggle dark mode">Dark Mode</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>A General Purpose Server</h2>
+      <p>Join us to chill, chat, and have a good time!</p>
+      <a href="https://discord.gg/jkNWkmXx" target="_blank" rel="noopener noreferrer" class="join-link">
+        Join the Server
+      </a>
+    </section>
+
+    <section class="rules">
+      <h3>Rules</h3>
+      <ul>
+        <li><strong>Be Cool with Each Other:</strong> No bullying, hate speech, or harassment.</li>
+        <li><strong>Swearing is Fine, Just No Slurs:</strong> Keep it respectful.</li>
+        <li><strong>No Spam, Please:</strong> Share, but don’t flood the chat.</li>
+        <li><strong>Promotion? Contact the Owner:</strong> DM first before promoting.</li>
+        <li><strong>Stick to the Right Channels:</strong> Stay organized.</li>
+        <li><strong>No Toxic Vibes:</strong> Positivity only!</li>
+        <li><strong>Listen to the Mods:</strong> Mods keep things smooth.</li>
+        <li><strong>Respect Privacy:</strong> Don’t share personal info.</li>
+        <li><strong>Have Fun and Be Yourself:</strong> Enjoy the server!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Live Member Count</h3>
+      <iframe
+        src="https://discord.com/widget?id=1318935687113736202&theme=light"
+        class="discord-widget"
+        allowtransparency="true"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        scrolling="no"
+      ></iframe>
+      <p style="font-size: 0.8rem; margin-top: 0.5rem;">
+        (Discord widget — theme switches with dark/light mode)
+      </p>
+    </section>
+  </main>
+
+  <footer>© 2025 Eternal Discord Server. All rights reserved.</footer>
+
+  <script>
+    const toggleBtn = document.querySelector(".toggle-theme");
+    const body = document.body;
+    const iframe = document.querySelector("iframe.discord-widget");
+    const serverId = "1318935687113736202";
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const isDark = body.classList.contains("dark");
+      toggleBtn.textContent = isDark ? "Light Mode" : "Dark Mode";
+      iframe.src = https://discord.com/widget?id=${serverId}&theme=${isDark ? "dark" : "light"};
+    });
+  </script>
+</body>
+</html>
